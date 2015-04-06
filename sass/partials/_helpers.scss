@@ -1,0 +1,56 @@
+// helpers
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+@mixin ellipsis {
+  width: 290px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin escape-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+@mixin open_regular {
+	font-family: 'open_sansregular', Arial, Helvetica, sans-serif;
+}
+
+@mixin open_light {
+	font-family: 'open_sanslight', Arial, Helvetica, sans-serif;
+}
+
+@mixin aside_link {
+    color: $c-headings;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+@mixin big {
+	font-size: 2em;
+}
+
+@mixin mega-big {
+  font-size: 3em;
+}
+
+@mixin small {
+	font-size: 12px;
+}
+
+@mixin text-shadow {
+  text-shadow: 2px 2px 4px #000000;
+}

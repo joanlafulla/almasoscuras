@@ -1,0 +1,71 @@
+$columns : 12;
+$margin: 5%;
+
+@function calculateBlock ( $number: 1, $margin: $margin)
+{
+	$calc : (100%/$columns*$number)-$margin;
+	$margin-divide: $margin/$columns;
+	@return $calc + ($margin-divide*$number);  
+}
+
+.gr-container {
+	max-width: 92%;
+	margin: 0 auto;
+	min-height: 1px;
+}
+
+.gr-row
+{
+    width:100%;
+
+    &:after
+    {
+        clear:both;
+        display:block;
+        content:'';
+        line-height:0;
+    }
+    [class*="gr-block"]
+        {
+        display:block;
+        float:left;
+        margin-left:$margin;
+        &:first-of-type
+        {
+            margin-left:0 !important;
+        }
+    }
+}
+
+#footer .gr-block4 {
+    float: right;
+}
+
+#footer .gr-block8 {
+    float: left;
+}
+
+
+@for $i from 1 to $columns+1
+{
+    $width : calculateBlock($i);
+    .gr-block#{$i} { width:$width }
+}
+
+@media screen and (max-width: 680px) {
+  [class*="gr-block"]{
+    width:100% !important;
+    float:none !important;
+    margin:32px 0 32px 0 !important;
+  }
+
+  #footer [class*="gr-block"]{
+    width:100% !important;
+    float:none !important;
+    margin:32px 0 0 0 !important;
+  }
+
+  #footer footer {
+    margin-bottom: -32px !important;
+  }
+}
