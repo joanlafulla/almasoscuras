@@ -1679,7 +1679,7 @@ body {
   overflow: hidden; }
 
 #footer {
-  background-color: #050505;
+  background-color: #000;
   position: relative;
   min-height: 200px;
   color: #fff;
