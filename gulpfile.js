@@ -23,7 +23,7 @@ gulp.task('scripts_home', function() {
     .pipe(concat('main_home.js'))
     .pipe(gulp.dest('./js'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('./js'))
     .pipe(notify({ message: 'Scripts task home complete' }));
 });
