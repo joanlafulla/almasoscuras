@@ -269,10 +269,8 @@ img {
       margin-left: 0 !important; }
 
 #footer .gr-block4 {
-  float: right; }
-
-#footer .gr-block8 {
-  float: left; }
+  float: right;
+  padding-top: 32px; }
 
 .gr-block1 {
   width: 3.75%; }
@@ -1267,6 +1265,11 @@ input[type="submit"] {
       margin-left: 0; }
     .share li a i {
       font-size: 24px; }
+
+.share.share--footer {
+  display: inline-block; }
+  .share.share--footer li a i {
+    color: white; }
 
 #importantfield {
   display: none;

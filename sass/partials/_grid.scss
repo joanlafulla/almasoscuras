@@ -39,11 +39,10 @@ $margin: 5%;
 
 #footer .gr-block4 {
     float: right;
+    padding-top: 32px;
 }
 
-#footer .gr-block8 {
-    float: left;
-}
+
 
 
 @for $i from 1 to $columns+1

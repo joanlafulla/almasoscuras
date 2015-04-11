@@ -22,7 +22,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts_home', function() {
-  return gulp.src(['./js/jquery_almas.js', './js/core.js', './js/home.js'])
+  return gulp.src(['./js/jquery_almas.js', './js/modernizr.custom.js', './js/core.js', './js/home.js'])
     .pipe(concat('main_home.js'))
     .pipe(gulp.dest('./js'))
     .pipe(rename({suffix: '.min'}))
@@ -32,7 +32,7 @@ gulp.task('scripts_home', function() {
 });
 
 gulp.task('scripts_detall', function() {
-  return gulp.src(['./js/jquery_almas.js', './js/core.js', './js/jquery.fitvids.js', './js/jquery.lazy.js', './js/detall.js'])
+  return gulp.src(['./js/jquery_almas.js', './js/modernizr.custom.js', './js/core.js', './js/jquery.fitvids.js', './js/jquery.lazy.js', './js/detall.js'])
     .pipe(concat('main_detall.js'))
     .pipe(gulp.dest('./js'))
     .pipe(rename({suffix: '.min'}))
