@@ -1673,10 +1673,9 @@ body {
   margin: 40px auto; }
 
 #header {
-  background-color: #333;
+  background-color: #000;
   height: 64px;
-  position: relative;
-  background-image: url('../img/bg_black.jpg'); }
+  position: relative; }
 
 .footer-wrapper {
   overflow: hidden; }
@@ -1698,7 +1697,9 @@ body {
   transform: rotate(-2deg); }
 
 .logo {
-  background: url("../img/logo_almas.png") no-repeat scroll 0 0 transparent;
+  background: url("../img/logo_almas.png") no-repeat scroll 0 0 transparent; }
+
+.logo {
   display: block;
   height: 29px;
   left: 8px;
@@ -1805,10 +1806,16 @@ article {
 
 @media screen and (max-width: 480px) {
   .logo-responsive {
-    display: inline;
+    display: block;
     position: absolute;
-    left: -32px;
-    z-index: 0; }
+    left: -14px;
+    text-indent: -9999px;
+    top: 0;
+    width: 214px;
+    z-index: 100000;
+    height: 148px;
+    background: url("../img/logo2@2x.png") no-repeat scroll 0 0 transparent;
+    background-size: contain; }
   .logo {
     display: none; }
   #nav-main {
@@ -1884,3 +1891,7 @@ article {
   .meta-article {
     padding: 0;
     margin: 0; } }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background: url("../img/logo_almas@2x.png") no-repeat scroll 0 0 transparent; } }
