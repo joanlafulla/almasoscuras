@@ -1,4 +1,7 @@
 var gulp = require('gulp');
+var browsersync = require('browser-sync');
+var reload = browsersync.reload;
+var mysite = 'almasoscuras'
 var watch = require('gulp-watch');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
@@ -38,13 +41,25 @@ gulp.task('scripts_detall', function() {
     .pipe(notify({ message: 'Scripts task detall complete' }));
 });
 
+// BROWSER SYNC =========================================
+gulp.task('browsersync', function() {
+  browsersync({
+        proxy: "http://localhost/almasoscuras/",
+        files: [
+            'css/*.css',
+            'js/*.js',
+            '*.html'
+        ]
+    })
+});
+
 
 
 // Watch
-gulp.task('watch', function() {
-
-  // Watch .scss files
+gulp.task('watch', ['browsersync'], function() {
   gulp.watch('sass/**/*.scss', ['styles']);
+  gulp.watch("*.html").on('change', reload);
+});
 
   // Watch .js files from home
   //gulp.watch('js/**/*.js', ['scripts_home']);
@@ -53,9 +68,9 @@ gulp.task('watch', function() {
   //gulp.watch('js/**/*.js', ['scripts_detall']);
 
   // Create LiveReload server
-  livereload.listen();
+  //livereload.listen();
 
   // Watch any files in dist/, reload on change
-  gulp.watch('./css/**').on('change', livereload.changed)
+  //gulp.watch('./css/**').on('change', livereload.changed)
 
-  });
+  
