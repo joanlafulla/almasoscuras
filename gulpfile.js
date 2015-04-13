@@ -21,6 +21,11 @@ gulp.task('styles', function() {
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
+gulp.task('copy', function(){
+  gulp.src('./css/styles.css')
+    .pipe(gulp.dest('../almasoscuras_real/css/'));
+});
+
 gulp.task('scripts_home', function() {
   return gulp.src(['./js/jquery_almas.js', './js/core.js', './js/jquery.fitvids.js', './js/home.js'])
     .pipe(concat('main_home.js'))
@@ -58,6 +63,7 @@ gulp.task('browsersync', function() {
 // Watch
 gulp.task('watch', ['browsersync'], function() {
   gulp.watch('sass/**/*.scss', ['styles']);
+  gulp.watch('css/**/*.css', ['copy']);
   gulp.watch("*.html").on('change', reload);
 });
 

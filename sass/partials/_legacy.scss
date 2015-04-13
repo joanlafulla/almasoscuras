@@ -1,0 +1,167 @@
+/* =============================================================================
+  PUNTUACIÓN ANTIGUA
+   ========================================================================== */
+
+article p.tagpunt{
+    margin-top:8px !important;
+    display:inline;
+    font-size:11px;
+    color:#fff;
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:3px !important;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    background-color:#660000;
+}
+
+article p.puntuno,
+article p.puntdos,
+article p.punttres,
+article p.puntcuatro,
+article p.puntcinco {
+    font-family:Arial, Trebuchet MS, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top:12px !important;
+    margin:0px !important;
+    line-height: 1 !important;
+}
+
+p.puntuno {
+    color: #6699cc;
+}
+
+p.puntdos {
+    color: #006699;   
+}
+
+p.punttres {
+    color: #ffcc00;
+}
+
+p.puntcuatro {
+    color: #ff6600;
+}
+
+p.puntcinco {
+    color: #993300;
+}
+
+
+article p.puntuno span,
+article p.puntdos span,
+article p.punttres span,
+article p.puntcuatro span,
+article p.puntcinco span {
+    font-size: 15px;
+    padding-left:3px;  
+}
+
+p.puntuno span {
+   color: #6699cc;
+   margin-top:0px;
+}
+
+p.puntdos span {
+    color: #006699;
+}
+
+p.punttres span {
+    color: #ffcc00;
+}
+
+p.puntcuatro span {
+    color: #ff6600;
+}
+
+p.puntcinco span {
+    color: #993300;
+}
+
+article p.puntunoest,
+article p.puntdosest,
+article p.punttresest,
+article p.puntcuatroest,
+article p.puntcincoest {
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: block;
+    width: 86px;
+    height: 14px;
+    margin:8px 0px 0px 228px !important;
+    padding: 0px !important;
+}
+
+p.puntunoest {
+   background-image: url(../img/uno.gif); 
+}
+
+p.puntdosest {
+    background-image: url(../img/dos.gif);
+}
+
+p.punttresest {
+    background-image: url(../img/tres.gif);
+}
+
+p.puntcuatroest {
+    background-image: url(../img/cuatro.gif);
+}
+
+p.puntcincoest {
+    background-image: url(../img/cinco.gif);
+}
+
+p.puntunoest span,
+p.puntdosest span,
+p.punttresest span,
+p.puntcuatroest span,
+p.puntcincoest span {
+    display: none;
+}
+
+p.puntunoestult,
+p.puntdosestult,
+p.punttresestult,
+p.puntcuatroestult,
+p.puntcincoestult {
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: block;
+    width: 51px;
+    height: 9px;
+    padding: 0px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+p.puntunoestult {
+    background-image: url(../img/unamini.gif);
+}
+
+p.puntdosestult {
+    background-image: url(../img/dosmini.gif);
+}
+
+p.punttresestult {
+    background-image: url(../img/tresmini.gif);
+}
+
+p.puntcuatroestult {
+    background-image: url(../img/cuatromini.gif);
+}
+
+p.puntcincoestult {
+    background-image: url(../img/cincomini.gif);
+}
+
+p.puntunoestult span,
+p.puntdosestult span,
+p.punttresestult span,
+p.puntcuatroestult span,
+p.puntcincoestult span {
+    display: none;
+}
