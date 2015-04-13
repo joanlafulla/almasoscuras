@@ -63,6 +63,7 @@ img.lazy{
 .nav-main--search-input {
   width: 80%;
   display: inline-block;
+  vertical-align: top;
 
       > input[type=text] {
         border: none;
@@ -93,6 +94,25 @@ img.lazy{
   position: relative;
   height: 64px;
   width: 64px;
+  vertical-align: top;
+
+  &:hover {
+      background-color: lighten($c-black, 10%);
+      text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-main--search-input {
+    width: 100%;
+  }
+
+  .nav-main--search-submit {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    top: 12px;
+  }
 }
 
 .btsearch--main {
@@ -108,13 +128,7 @@ img.lazy{
 }
 
 .search-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 64px;
-  width: 64px;
   cursor: pointer;
-  position: absolute;
 
     i {
       font-size: 40px;
@@ -122,11 +136,6 @@ img.lazy{
       font-weight: 100;
       line-height: 64px;
       padding: 0;
-    }
-
-    &:hover {
-      background-color: lighten($c-black, 10%);
-      text-decoration: none;
     }
 }
 

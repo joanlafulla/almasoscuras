@@ -123,6 +123,10 @@ article p {
 	color: $c-less;
 }
 
+.foto-ficha > .dades {
+	margin-top: 12px;
+}
+
 .dades {
 	@include open_regular;
 	@include escape-list;
