@@ -57,5 +57,11 @@ var getJsonHero = function() {
 
 var jsonHero = new getJsonHero();
  	jsonHero.init();
+
+// *********************************************  //
+// VIDEOS DE YOUTUBE/VIMEO RESPONSIVE //
+// *********************************************  //
+$( "iframe" ).wrap( "<div class='video-post--content'></div>" );
+	$(".video-post--content").fitVids();
 	
 }); //FIN JQUERY
