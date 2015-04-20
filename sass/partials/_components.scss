@@ -916,7 +916,7 @@ ul.alert-error {
     }
 }
 
-.tag--criticas--header {
+.tag_header_criticas {
   @extend %tag;
   color: $c-white;
   background-color: $c-headings;
@@ -934,10 +934,16 @@ ul.alert-error {
     }
 }
 
-.tag--Libros--header {
+.tag_header_libros {
   @extend %tag;
   color: $c-white;
   background-color: $c-orange;
+}
+
+.tag_header_relatos {
+  @extend %tag;
+  color: $c-white;
+  background-color: #34495e;
 }
 
 .tag--relatos {
@@ -964,7 +970,7 @@ ul.alert-error {
     }
 }
 
-.tag--noticias--header {
+.tag_header_noticias {
   @extend %tag;
   color: $c-white;
   background-color: #27ae60;
