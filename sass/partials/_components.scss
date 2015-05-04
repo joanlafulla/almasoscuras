@@ -311,34 +311,48 @@ img.lazy{
   margin: 0 0 32px;
   border-radius: 5px;
   padding: 16px;
+  color: $c-white;
+}
+
+.alert-info i,
+.alert-warning i,
+.alert-success i,
+.alert-error i {
+  color: $c-white;
+  font-size: 32px;
+  display: inline-block;
+  width: 1%;
+  float:left;
+}
+
+.alert-info p,
+.alert-warning p,
+.alert-success p,
+.alert-error p {
+  display: inline-block;
+  width: 99%;
+  margin: 0;
+  padding-left: 40px;
 }
 
 .alert-info {
   @extend %alert;
   background-color: $c-alert-info;
-  border: 1px solid darken($c-alert-info, 20%);
-  color: darken($c-alert-info, 70%);
 }
 
 .alert-warning {
   @extend %alert;
   background-color: $c-alert-warning;
-  border: 1px solid darken($c-alert-warning, 20%);
-  color: darken($c-alert-warning, 80%);
 }
 
 .alert-success {
   @extend %alert;
   background-color: $c-alert-success;
-  border: 1px solid darken($c-alert-success, 20%);
-  color: darken($c-alert-success, 80%);
 }
 
 .alert-error {
   @extend %alert;
   background-color: $c-alert-error;
-  border: 1px solid darken($c-alert-error, 20%);
-  color: darken($c-alert-error, 80%);
 }
 
 ul.alert-error {
