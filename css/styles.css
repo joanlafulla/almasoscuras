@@ -1045,7 +1045,7 @@ ul.alert-error {
   .termometro table {
     margin-right: 32px; } }
 
-.tag--criticas, .tag_header_criticas, .tag--Libros, .tag_header_libros, .tag_header_relatos, .tag--relatos, .tag--noticias, .tag_header_noticias, .tag--vod {
+.tag--criticas, .tag_header_criticas, .tag--Libros, .tag_header_libros, .tag--relatos, .tag_header_relatos, .tag--noticias, .tag_header_noticias, .tag--vod, .tag_header_VOD {
   border-radius: 4px;
   font-weight: 200;
   display: inline-block;
@@ -1085,10 +1085,6 @@ ul.alert-error {
   color: #fff;
   background-color: #E95C33; }
 
-.tag_header_relatos {
-  color: #fff;
-  background-color: #34495e; }
-
 .tag--relatos {
   border: 1px solid #34495e;
   color: #34495e; }
@@ -1096,6 +1092,10 @@ ul.alert-error {
     text-decoration: none;
     background-color: #34495e;
     color: #fff; }
+
+.tag_header_relatos {
+  color: #fff;
+  background-color: #34495e; }
 
 .tag--noticias {
   border: 1px solid #27ae60;
@@ -1110,6 +1110,14 @@ ul.alert-error {
   background-color: #27ae60; }
 
 .tag--vod {
+  border: 1px solid #E95C33;
+  color: #E95C33; }
+  .tag--vod:hover {
+    text-decoration: none;
+    background-color: #E95C33;
+    color: #fff; }
+
+.tag_header_VOD {
   color: #fff;
   background-color: #E95C33; }
 
@@ -1456,6 +1464,34 @@ label {
 
 .unlinked {
   border-bottom: 4px solid #26A2E0; }
+
+.searcher_results {
+  font-size: 16px;
+  font-weight: normal; }
+  .searcher_results span {
+    color: #26A2E0;
+    font-weight: bold; }
+
+.searcher_item {
+  margin-top: 32px; }
+
+.searcher_title {
+  color: #660000;
+  font-family: "ChunkFiveRoman",Arial,Helvetica,sans-serif;
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1em;
+  margin: 0; }
+
+.searcher_credits span, .searcher_tags span {
+  padding: 4px;
+  color: #fff; }
+
+.searcher_credits span {
+  background: #26A2E0; }
+
+.searcher_tags span {
+  background: #e74c3c; }
 
 .clearfix:after {
   content: "";
