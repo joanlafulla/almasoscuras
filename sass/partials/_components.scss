@@ -332,6 +332,11 @@ img.lazy{
 .alert-info {
   @extend %alert;
   background-color: $c-alert-info;
+
+  	a {
+  		color: $c-white;
+  		text-decoration: underline;
+  	}
 }
 
 .alert-warning {
@@ -1196,7 +1201,8 @@ label {
 }
 
 .label-inline,
-label[for="remember"] {
+label[for="remember"],
+label[for="forget"] {
   display: inline;
   float: none;
   width: auto;
