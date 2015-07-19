@@ -1507,6 +1507,7 @@ label[for="forget"] {
   background: $star-5;
 }
 
+
 // GALERIA CARTELES
 
 .galtumbs {
@@ -1574,3 +1575,130 @@ label[for="forget"] {
     margin-right: 0;
   }
 }
+
+// FULLWIDTH QUIENES SOMOS
+
+.who-wrapper-header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.fullscreen_background {
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-position:50% 50%\9 !important;
+}
+
+.fullscreen {
+    width:100%;
+    min-height:100%;
+    position: relative;
+}
+
+.fullscreen_content_wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.fullscreen_content--centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1200px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+      h1 {
+        font-family: "ChunkFiveRoman",Arial,Helvetica,sans-serif;
+        font-size: 4em;
+        font-weight: normal;
+        line-height: 1.2em;
+        margin: 0;
+        text-shadow: 2px 2px 4px #000000;
+        color: white;
+      }
+
+      h2 {
+        font-family: "open_sanslight";
+      color: white;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px #000000;
+      margin-top: 0;
+      }
+}
+
+.who-history_wrapper,
+.who-are_wrapper {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 32px 32px;
+}
+
+.who-history h1 {
+    font-family: "open_sanslight";
+    font-size: 32px;
+}
+
+.who-history article {
+  padding: 0 32px;
+}
+
+.fullscreen_next {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+      span {
+        text-transform: uppercase;
+        color: #dadada;
+      }
+
+      i {
+        display: block;
+        font-size: 70px;
+        padding: 0 0 16px;
+        color: #dadada;
+      }
+}
+
+blockquote {
+  font-family: "open_sanslight";
+  font-size: 32px;
+  color: #999;
+  margin: 1.5em 10px 0.5em;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #999;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.10em;
+  vertical-align: -0.4em;
+  font-family: "Trebuchet MS";
+  font-size: 2.5em;
+}
+
+blockquote:after {
+  color: #999;
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-left: 0.10em;
+  vertical-align: -0.4em;
+  font-family: "Trebuchet MS";
+  font-size: 2.5em;
+}
+
+blockquote p {
+  display: inline;
+}
+
