@@ -1064,11 +1064,14 @@ ul.alert-error {
   @include button ($c-white, $c-orange, $c-orange, 16px 24px);
 }
 
+
+
 .button-primary--small {
   @include button ($c-white, $c-orange, $c-orange, 8px);
 }
 
-.button-secondary {
+.button-secondary,
+.button-secondary--header {
   border: 1px solid $c-blue-button;
   @include button ($c-blue-button, transparent, $c-white, 16px 24px);
 }
@@ -1502,4 +1505,72 @@ label[for="forget"] {
 
 .searcher_tags span {
   background: $star-5;
+}
+
+// GALERIA CARTELES
+
+.galtumbs {
+  list-style-type: none;
+  margin: 20px 16px 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.galtumbs li {
+  width: 17.6%;
+  float: left;
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+.galtumbs li:nth-child(5n+5) {
+  float: right;
+  margin-right: 0;
+}
+
+.galtumbs li img {
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .galtumbs {
+    margin: 20px 8px 0;
+  }
+  .galtumbs li {
+    width: 22.75%;
+    float: left;
+    margin-right: 3%;
+    margin-bottom: 3%;
+  }
+
+  .galtumbs li:nth-child(5n+5) {
+    float: left;
+    margin-right: 3%;
+  }
+
+  .galtumbs li:nth-child(4n+4) {
+    float: right;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .galtumbs {
+    margin: 20px 0 0;
+  }
+  .galtumbs li {
+    width: 48.5%;
+    float: left;
+    margin-right: 3%;
+    margin-bottom: 3%;
+  }
+
+  .galtumbs li:nth-child(4n+4) {
+    float: left;
+    margin-right: 3%;
+  }
+
+  .galtumbs li:nth-child(2n+2) {
+    float: right;
+    margin-right: 0;
+  }
 }

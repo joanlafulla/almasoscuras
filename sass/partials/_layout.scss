@@ -13,7 +13,7 @@
 }
 
 body {
-	background-image: url('../img/bg.jpg');
+	background-image: url('http://www.almasoscuras.com/img/bg.jpg');
 	font-size: 1em;
 	color: $c-general;
 	background-color:#FDF5F2;
@@ -62,7 +62,7 @@ body {
 }
 
 .logo {
-	background: url("../img/logo_almas.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background: url("http://www.almasoscuras.com/img/logo_almas.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
 .logo {
@@ -156,7 +156,7 @@ article {
 .subsection-header--images,
 .subsection-header--media {
 	padding:16px 8px;
-	background-image: url('../img/bg_floral.png'), url('../img/bg_grunge.png');
+	background-image: url('http://www.almasoscuras.com/img/bg_floral.png'), url('../img/bg_grunge.png');
 	background-repeat: no-repeat, repeat;
 	background-position: right top;
 
@@ -213,7 +213,7 @@ article {
     width: 214px;
     z-index: 100000;
     height: 148px;
-    background: url("../img/logo2@2x.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://www.almasoscuras.com/img/logo2@2x.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     background-size: contain;
 	}
 
@@ -358,7 +358,7 @@ article {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 
   	.logo {
-	background: url("../img/logo_almas@2x.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background: url("http://www.almasoscuras.com/img/logo_almas@2x.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 	}
 }
 
