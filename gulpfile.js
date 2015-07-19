@@ -31,9 +31,19 @@ gulp.task('scripts_home', function() {
     .pipe(concat('main_home.js'))
     .pipe(gulp.dest('./js'))
     .pipe(rename({suffix: '.min'}))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./js'))
     .pipe(notify({ message: 'Scripts task home complete' }));
+});
+
+gulp.task('scripts_who', function() {
+  return gulp.src(['./js/jquery_almas.js', './js/quienes_somos.js'])
+    .pipe(concat('main_who.js'))
+    .pipe(gulp.dest('./js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./js'))
+    .pipe(notify({ message: 'Scripts task who complete' }));
 });
 
 gulp.task('scripts_detall', function() {
