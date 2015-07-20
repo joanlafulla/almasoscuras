@@ -118,6 +118,11 @@ article p {
 	line-height: 1.6em;
 }
 
+article p:empty {
+	margin: 0;
+	padding: 0;
+}
+
 
 .less {
 	color: $c-less;
