@@ -872,7 +872,6 @@ ul.alert-error {
       font-family: ChunkFiveRoman;
       font-size: 24px;
       color: $c-white;
-      background-color: $c-headings;
       padding: 6px 16px;
     
       > span {
@@ -1506,11 +1505,23 @@ label[for="forget"] {
 .searcher_tags span {
   background: $star-5;
 }
+// GALERIA WHO
+.galwho > li {
+    width: 22.75%;
+    float: left;
+    margin-right: 3%;
+    margin-bottom: 3%;
+  }
 
+  .galwho > li:nth-child(4n+4) {
+    float: right;
+    margin-right: 0;
+  }
 
 // GALERIA CARTELES
 
-.galtumbs {
+.galtumbs,
+.galwho {
   list-style-type: none;
   margin: 20px 16px 0;
   overflow: hidden;
@@ -1528,12 +1539,45 @@ label[for="forget"] {
   margin-right: 0;
 }
 
-.galtumbs li img {
+.galtumbs li img,
+.galwho > li img {
   height: auto;
 }
 
+.galwho-img-wrapper,
+.galwho-info-wrapper {
+  text-align: center;
+}
+
+.galwho-info-wrapper {
+  margin-top: 12px;
+  font-family: "open_sanslight";
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+        li {
+          padding: 2px 0;
+
+            a {
+              color: #333;
+            }
+        }
+    }
+}
+
+.galwho-img-wrapper .avatar {
+  border-radius: 100px;
+  height: 100px !important;
+  margin: 0 auto;
+  width: 100px !important;
+}
+
 @media only screen and (max-width: 600px) {
-  .galtumbs {
+  .galtumbs,
+  .galwho {
     margin: 20px 8px 0;
   }
   .galtumbs li {
@@ -1555,7 +1599,8 @@ label[for="forget"] {
 }
 
 @media only screen and (max-width: 420px) {
-  .galtumbs {
+  .galtumbs,
+  .galwho {
     margin: 20px 0 0;
   }
   .galtumbs li {
@@ -1586,8 +1631,8 @@ label[for="forget"] {
 
 .fullscreen_background {
     background-repeat:no-repeat;
-    background-position:50% 50%;
-    background-position:50% 50%\9 !important;
+    background-position:center center;
+    background-attachment: fixed;
 }
 
 .fullscreen {
@@ -1614,7 +1659,7 @@ label[for="forget"] {
 
       h1 {
         font-family: "ChunkFiveRoman",Arial,Helvetica,sans-serif;
-        font-size: 4em;
+        font-size: 3.5em;
         font-weight: normal;
         line-height: 1.2em;
         margin: 0;
@@ -1625,7 +1670,7 @@ label[for="forget"] {
       h2 {
         font-family: "open_sanslight";
       color: white;
-      font-size: 2em;
+      font-size: 1.8em;
       text-shadow: 2px 2px 4px #000000;
       margin-top: 0;
       }

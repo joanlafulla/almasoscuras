@@ -33,7 +33,7 @@ gulp.task('scripts_home', function() {
     .pipe(rename({suffix: '.min'}))
 
     //Solo activar el minify para el js que subirá a producción
-    .pipe(uglify())
+    .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./js'))
     .pipe(notify({ message: 'Scripts task home complete' }));
 });

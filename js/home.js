@@ -37,7 +37,6 @@ var getJsonHero = function() {
 	};
 
 	this.resizeBackground = function(img_big, img_medium, img_small) {
-		console.log("hola resize");
 		if (window.matchMedia( '(min-width: 479px)' ).matches && window.matchMedia( '(max-width: 798px)' ).matches) {
 				$(".CoverImage").css({
 				"background-image" : "url('http://www.almasoscuras.com/img/hero/"+img_medium+"')"
