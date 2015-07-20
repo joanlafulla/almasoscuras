@@ -1,12 +1,18 @@
 @import "_colours";
 @import "_helpers";
 
+body {
+	@include open_regular;
+}
+
 // Image Lazy
 img.lazy{
   max-width: 100%;
   height: auto;
   margin-bottom: 16px;
 }
+
+
 
 
 //Nav Main
@@ -368,6 +374,7 @@ img.lazy{
 .alert-info {
   @extend %alert;
   background-color: $c-alert-info;
+  margin-top: 32px;
 
   	a {
   		color: $c-white;
@@ -513,6 +520,7 @@ ul.alert-error {
 
   a {
     @include aside_link;
+    margin-bottom: 0;
   }
 
   &:first-child {
@@ -1075,6 +1083,11 @@ ul.alert-error {
   @include button ($c-blue-button, transparent, $c-white, 16px 24px);
 }
 
+.button-secondary--header {
+  border: 1px solid $c-blue-button;
+  @include button ($c-blue-button, transparent, $c-white, 8px 16px);
+}
+
 .button-secondary--small {
   border: 1px solid $c-blue-button;
   @include button ($c-blue-button, transparent, $c-white, 8px);
@@ -1471,6 +1484,7 @@ label[for="forget"] {
 .searcher_results {
   font-size: 16px;
   font-weight: normal;
+  margin-top: 60px;
 
     span {
       color: $c-blue;
@@ -1489,6 +1503,19 @@ label[for="forget"] {
   font-weight: normal;
   line-height: 1em;
   margin: 0;
+}
+
+.searcher_credits {
+	@include escape-list;
+		li {
+			float: left;
+			margin-right: 1.6em;
+			padding-bottom: 16px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+		}
 }
 
 .searcher_credits span,

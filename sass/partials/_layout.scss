@@ -123,6 +123,7 @@ article {
 		max-width: 100%;
 		display: block;
 		clear: both;
+		height: 100%;
 	}
 
 	img.poster {
@@ -177,6 +178,10 @@ article {
 .subsection-header--images.extraTop,
 .subsection-header--media.extraTop {
 	margin-top: 32px;
+}
+
+.subsection-header--images ~ p {
+	margin-top: 0;
 }
 
 .aside {

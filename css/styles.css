@@ -145,6 +145,18 @@ table {
 td, th {
   padding: 0; }
 
+.imgleft {
+  float: left;
+  height: auto;
+  margin: 8px 8px 8px 0;
+  width: auto;
+  display: block; }
+
+@media screen and (max-width: 380px) {
+  .imgleft {
+    width: 100%;
+    height: 100%; } }
+
 /* =============================================================================
   PUNTUACIÓN ANTIGUA
    ========================================================================== */
@@ -280,7 +292,7 @@ p.puntunoestult span, p.puntdosestult span, p.punttresestult span, p.puntcuatroe
   text-transform: none;
   line-height: 1;
   text-decoration: none;
-  color: #494136;
+  color: #bbbbbb;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -396,6 +408,9 @@ p.puntunoestult span, p.puntdosestult span, p.punttresestult span, p.puntcuatroe
   content: "";
   display: table;
   clear: both; }
+
+body {
+  font-family: 'open_sansregular', Arial, Helvetica, sans-serif; }
 
 img.lazy {
   max-width: 100%;
@@ -662,7 +677,8 @@ img.lazy {
   padding-left: 40px; }
 
 .alert-info {
-  background-color: #2f96b4; }
+  background-color: #2f96b4;
+  margin-top: 32px; }
   .alert-info a {
     color: #fff;
     text-decoration: underline; }
@@ -765,7 +781,8 @@ ul.alert-error {
     color: #660000;
     font-weight: normal;
     display: inline-block;
-    margin-bottom: 4px; }
+    margin-bottom: 4px;
+    margin-bottom: 0; }
   .last-comments li:first-child {
     border: none; }
 
@@ -1185,6 +1202,19 @@ ul.alert-error {
     text-decoration: none;
     background-color: white; }
 
+.button-secondary--header {
+  border: 1px solid #3498d8;
+  color: #3498d8;
+  padding: 8px 16px;
+  background-color: transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 8px 0;
+  display: inline-block; }
+  .button-secondary--header:hover {
+    text-decoration: none;
+    background-color: white; }
+
 .button-secondary--small {
   border: 1px solid #3498d8;
   color: #3498d8;
@@ -1484,7 +1514,8 @@ label {
 
 .searcher_results {
   font-size: 16px;
-  font-weight: normal; }
+  font-weight: normal;
+  margin-top: 60px; }
   .searcher_results span {
     color: #26A2E0;
     font-weight: bold; }
@@ -1499,6 +1530,16 @@ label {
   font-weight: normal;
   line-height: 1em;
   margin: 0; }
+
+.searcher_credits {
+  list-style-type: none;
+  padding: 0; }
+  .searcher_credits li {
+    float: left;
+    margin-right: 1.6em;
+    padding-bottom: 16px; }
+    .searcher_credits li:last-child {
+      margin-right: 0; }
 
 .searcher_credits span, .searcher_tags span {
   padding: 4px;
@@ -1967,6 +2008,10 @@ article p {
   font-family: 'open_sansregular', Arial, Helvetica, sans-serif;
   line-height: 1.6em; }
 
+article p:empty {
+  margin: 0;
+  padding: 0; }
+
 .less {
   color: #999; }
 
@@ -2132,7 +2177,8 @@ article {
     width: 100%;
     max-width: 100%;
     display: block;
-    clear: both; }
+    clear: both;
+    height: 100%; }
   article img.poster {
     width: auto;
     max-width: auto;
@@ -2171,6 +2217,9 @@ article {
 
 .subsection-header.extraTop, .subsection-header--images.extraTop, .subsection-header--media.extraTop {
   margin-top: 32px; }
+
+.subsection-header--images ~ p {
+  margin-top: 0; }
 
 .aside {
   margin: 0 -16px;
