@@ -211,7 +211,7 @@ img.lazy{
   display: none;
   opacity: 0;
   transition: opacity 0.3s;
-  padding: 30px 32px 32px;
+  padding: 45px 32px 32px;
   @include open_light;
   line-height: 1.5;
 }
@@ -255,9 +255,14 @@ img.lazy{
 
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
   .menuDesplegable--content {
     font-size: 14px;
+    padding: 90px 32px 32px;
+  }
+
+  .searchDesplegable--content {
+    padding: 75px 32px 32px;
   }
 }
 
@@ -1178,6 +1183,7 @@ input[type="submit"] {
 }
 
 .share.share--footer {
+  margin-top: 32px;
   display: inline-block;
     li a i { color: white};
 }
@@ -1911,3 +1917,39 @@ blockquote p {
 	}
 }
 
+.footer-info-img {
+  margin-top: 46px;
+    img {
+      width: 200px;
+    }
+}
+
+.footer-info {
+  margin-left: 16px;
+}
+
+.footer-info_nav {
+  font-size: 12px;
+
+    a {
+      color: $c-white;
+      text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+    }
+}
+
+.footer-info-mine {
+  font-size: 10px;
+  padding-bottom: 16px;
+    a {
+      color: $c-white;
+      text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+    }
+}
