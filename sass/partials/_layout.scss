@@ -112,6 +112,7 @@ body {
 
 .logo {
 	background: url("http://www.almasoscuras.com/img/logo_almas.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background-size: contain;
 }
 
 .logo {
@@ -159,7 +160,7 @@ article {
 		max-width: 100%;
 		display: block;
 		clear: both;
-		height: 100%;
+		height: auto;
 	}
 
 	img.poster {
@@ -168,6 +169,7 @@ article {
 		display: block;
 		text-align: center;
 		margin: 0 auto;
+		height: auto;
 	}
 }
 

@@ -95,6 +95,7 @@ h1.title-detail {
 	font-size: 4.375em;
 	line-height: 1em;
 	font-weight: normal;
+	word-wrap: break-word;
 }
 
 h2.subtitle-home {
@@ -116,6 +117,14 @@ h2.subtitle-detail {
 article p {
 	@include open_regular;
 	line-height: 1.6em;
+}
+
+article .foto-ficha p {
+	margin: 0;
+}
+
+article .foto-ficha p.ver-ficha-completa {
+	margin: 12px 0 !important;
 }
 
 article h3,
@@ -143,7 +152,7 @@ article p:empty {
 	font-size: 0.875em;
 	line-height: 1.5em;
 
-	span:not(.item-schema) {
+	span:not(.dades_item) {
 		font-weight: bold;
 		color: $c-headings;
 	}
