@@ -211,7 +211,7 @@ img.lazy{
   display: none;
   opacity: 0;
   transition: opacity 0.3s;
-  padding: 30px 32px 32px;
+  padding: 45px 32px 32px;
   @include open_light;
   line-height: 1.5;
 }
@@ -255,9 +255,14 @@ img.lazy{
 
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
   .menuDesplegable--content {
     font-size: 14px;
+    padding: 90px 32px 32px;
+  }
+
+  .searchDesplegable--content {
+    padding: 75px 32px 32px;
   }
 }
 
@@ -317,6 +322,9 @@ img.lazy{
   background-repeat: no-repeat;
   margin-bottom: 0;
   line-height: 0.5em;
+  white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
 }
 
 .numcom {
@@ -338,7 +346,7 @@ img.lazy{
     font-family: "ChunkFiveRoman",Arial,Helvetica,sans-serif;
     font-size: 16px;
     font-weight: normal;
-    text-transform: capitalize;
+    text-transform: capitalize; 
 }
 
 //Alerts
@@ -515,16 +523,15 @@ ul.alert-error {
 
 .last-comments li {
   display: block;
-  padding: 12px 0;
-  border-top: 1px solid #ccc;
+  padding: 12px 6px;
+
+  &:nth-child(odd){
+	background-color: rgba(102,102,102,0.1);
+  }
 
   a {
     @include aside_link;
     margin-bottom: 0;
-  }
-
-  &:first-child {
-    border: none;
   }
 }
 
@@ -609,6 +616,10 @@ ul.alert-error {
   display:block;
   width: 8px;
   height: 0;
+}
+
+.last-reviews--starts > td:first-child {
+  min-width: 100px;
 }
 
 .last-reviews--1,
@@ -1176,6 +1187,7 @@ input[type="submit"] {
 }
 
 .share.share--footer {
+  margin-top: 32px;
   display: inline-block;
     li a i { color: white};
 }
@@ -1318,10 +1330,11 @@ label[for="forget"] {
   position:absolute;
   right: 0;
   left: 0;
-  bottom: 10%;
+  top: 50%;
+  transform: translateY(-50%);
   max-width: 1180px;
   margin: 0 auto;
-  padding-left: 2%;
+  padding: 0 2%;
   text-align: center;
 
   i {
@@ -1353,13 +1366,21 @@ label[for="forget"] {
   }
 }
 
+.infoblock-text.infoblock-text--who h1 {
+  font-size: 3em;
+}
+
+.infoblock-text.infoblock-text--who {
+  bottom: 20%;
+}
+
 .infoblock-text-calltoaction {
   margin-top: 16px;
 }
 
 @media screen and (max-width: 960px) {
   .infoblock-text {
-      padding-left: 4%;
+      padding: 0 4%;
     }
 }
 
@@ -1370,6 +1391,12 @@ label[for="forget"] {
 
   .infoblock-text h2 {
     font-size: 16px;
+  }
+
+  .infoblock-text {
+    transform: none;
+    bottom: 10%;
+    top: auto;
   }
 
   .tag--vod {
@@ -1409,16 +1436,21 @@ label[for="forget"] {
   //background-image:url(../img/hero/1_small.jpg);
 }
 
+.CoverImage.CoverImage--who {
+  background-position: center bottom;
+  background-image:url(../img/monstruo_small.jpg);
+}
+
 @media only screen and (min-width : 479px) {
-    .CoverImage {
-    //background-image:url(../img/hero/1_medium.jpg);
-    }
+  .CoverImage.CoverImage--who {
+    background-image:url(../img/monstruo_medium.jpg);
+  }
 }
 
 @media only screen and (min-width : 799px) {
-    .CoverImage {
-    //background-image:url(../img/hero/1_big.jpg);
-    }
+  .CoverImage.CoverImage--who {
+    background-image:url(../img/monstruo_big.jpg);
+  }
 }
 
 .CoverImage--content {
@@ -1427,7 +1459,7 @@ label[for="forget"] {
     max-width: 1200px;
     position: relative;
     box-sizing: border-box;
-    padding-left: 0 4%;
+    padding: 0 4%;
     color: white;
 
      h1 {
@@ -1538,11 +1570,52 @@ label[for="forget"] {
     float: left;
     margin-right: 3%;
     margin-bottom: 3%;
+    min-height: 245px;
   }
 
   .galwho > li:nth-child(4n+4) {
     float: right;
     margin-right: 0;
+  }
+
+  @media only screen and (max-width: 780px) {
+    .galwho > li {
+      width: 31.33%;
+    }
+
+    .galwho > li:nth-child(4n+4) {
+      float: left;
+      margin-right: 3%;
+    }
+
+  .galwho > li:nth-child(3n+3) {
+      float: right;
+      margin-right: 0;
+    }
+
+    .who-are_wrapper, .who-history_wrapper {
+    padding: 0 16px 32px !important;
+    }
+
+    .who-history article {
+      padding: 0 16px !important;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .galwho > li {
+      width: 48.5%;
+    }
+
+    .galwho > li:nth-child(3n+3) {
+      float: left;
+      margin-right: 3%;
+    }
+
+  .galwho > li:nth-child(2n+2) {
+      float: right;
+      margin-right: 0;
+    }
   }
 
 // GALERIA CARTELES
@@ -1587,19 +1660,15 @@ label[for="forget"] {
 
         li {
           padding: 2px 0;
-
-            a {
-              color: #333;
-            }
         }
     }
 }
 
 .galwho-img-wrapper .avatar {
-  border-radius: 100px;
-  height: 100px !important;
+  border-radius: 120px;
+  height: 120px !important;
   margin: 0 auto;
-  width: 100px !important;
+  width: 120px !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1706,8 +1775,18 @@ label[for="forget"] {
 .who-history_wrapper,
 .who-are_wrapper {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 32px auto;
     padding: 0 32px 32px;
+}
+
+.who-history_wrapper {
+	padding-bottom: 0;
+}
+
+.galwho-info-wrapper li {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .who-history h1 {
@@ -1716,7 +1795,30 @@ label[for="forget"] {
 }
 
 .who-history article {
+  text-align: justify;
   padding: 0 32px;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+  -webkit-column-gap: 25px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 25px; /* Firefox */
+  column-gap: 25px;
+  -webkit-column-gap: 2.5rem; /* Chrome, Safari, Opera */
+  -moz-column-gap: 2.5rem; /* Firefox */
+  column-gap: 2.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .who-history article {
+  -webkit-column-count: 1; /* Chrome, Safari, Opera */
+  -moz-column-count: 1; /* Firefox */
+  column-count: 1;
+  text-align: left;
+  }
+}
+
+.who-history article p:first-child {
+  margin: 0;
 }
 
 .fullscreen_next {
@@ -1743,7 +1845,7 @@ blockquote {
   font-family: "open_sanslight";
   font-size: 32px;
   color: #999;
-  margin: 1.5em 10px 0.5em;
+  margin: 1em 10px 0.5em;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
@@ -1772,5 +1874,154 @@ blockquote:after {
 
 blockquote p {
   display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  blockquote {
+    font-size: 24px;
+  }
+
+  .infoblock-text.infoblock-text--who h1 {
+    font-size: 1.5em;
+  }
+
+  .infoblock-text.infoblock-text--who {
+    top: 30%;
+  }
+
+  .who-history_wrapper {
+    margin-bottom: 0;
+  }
+
+  .who-are_wrapper {
+    margin-top: 0;
+  }
+}
+
+.up {
+	position: absolute;
+	bottom: 8px;
+	right: 8px;
+	width: 48px;
+	height: 48px;
+	background-color: #3498db;
+	border-radius: 48px;
+	position: fixed;
+	z-index:2;
+	text-align: center;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.5s;
+	display: block;
+
+
+		i {
+			color: #ffffff;
+			line-height: 3em;
+			display: block;
+		}
+}
+
+@media screen and (min-width: 600px) {
+	.up {
+		display: none;
+	}
+}
+
+.footer-info-img {
+  margin-top: 46px;
+    img {
+      width: 200px;
+    }
+}
+
+.footer-info {
+  margin-left: 16px;
+}
+
+.footer-info_nav {
+  font-size: 12px;
+
+    a {
+      color: $c-white;
+      text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+    }
+}
+
+.footer-info-mine {
+  font-size: 10px;
+  padding-bottom: 16px;
+    a {
+      color: $c-white;
+      text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+    }
+}
+
+//tabla pelis
+
+.tablesorter {
+  table-layout:fixed;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 32px 0;
+  border-spacing: 0;
+
+    th, td {
+      padding: 16px 8px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;  
+      border-top: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #524B46;
+      border: 1px solid #ccc;
+      color: $c-white;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+
+    th:hover {
+      background-color: lighten(#524B46, 20%);
+    }
+
+    th:after {
+      font-family: 'i-almasoscuras';
+      display: inline-block;
+      content: "\e61b";
+      padding-left: 4px;
+      vertical-align: middle;
+    }
+
+    tbody {
+      font-size: 0.8em;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #EDE1D6;
+    }
+}
+
+@media screen and (max-width: 520px) {
+  .tablesorter_descarto {
+    display: none;
+  }
+
+  .tablesorter th {
+    font-size: 0.8em;
+    padding: 16px 3px;
+  }
 }
 

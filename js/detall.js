@@ -24,7 +24,7 @@ jQuery("img.lazy").lazy({
 // *********************************************  //
 // VIDEOS DE YOUTUBE/VIMEO RESPONSIVE //
 // *********************************************  //
-$( "iframe" ).wrap( "<div class='video-post--content'></div>" );
+$( "iframe, object" ).wrap( "<div class='video-post--content'></div>" );
 	$(".video-post--content").fitVids();
 	
 }); //FIN JQUERY

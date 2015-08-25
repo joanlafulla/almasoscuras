@@ -48,6 +48,16 @@ gulp.task('scripts_who', function() {
     .pipe(notify({ message: 'Scripts task who complete' }));
 });
 
+gulp.task('scripts_sorter', function() {
+  return gulp.src(['./js/jquery_almas.js', './js/core.js', './js/tablesorter.js'])
+    .pipe(concat('main_sorter.js'))
+    .pipe(gulp.dest('./js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./js'))
+    .pipe(notify({ message: 'Scripts task sorter complete' }));
+});
+
 gulp.task('scripts_detall', function() {
   return gulp.src(['./js/jquery_almas.js', './js/core.js', './js/jquery.fitvids.js', './js/jquery.lazy.js', './js/detall.js'])
     .pipe(concat('main_detall.js'))

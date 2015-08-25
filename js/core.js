@@ -1,6 +1,38 @@
 $(function(){
 
 // *********************************************  //
+// UP //
+// *********************************************  //
+	$(window).on("scroll", function() {
+		var scrollTop = $(window).scrollTop();
+		var limit = $(".hero").height();
+	  	if ( scrollTop > limit ) { 
+	    	$("#up").css({
+				"opacity": 1		
+			});
+		} else if (scrollTop < limit) {
+			$("#up").css({
+				"opacity" : 0			
+			});
+		}
+	});
+
+    function smk_jump_to_it( _selector, _speed ){
+        _speed = parseInt(_speed, 10) === _speed ? _speed : 300;
+        $( _selector ).on('click', function(event){
+            event.preventDefault();
+            var url = $(this).attr('href'); //cache the url.
+ 
+            // Animate the jump
+            $("html, body").animate({ 
+                scrollTop: parseInt( $(url).offset().top ) - 50
+            }, _speed);
+        });
+    }
+
+    smk_jump_to_it( '.up_link', 500);
+
+// *********************************************  //
 // COMPONENTE ULTIMOS COMENTARIOS //
 // *********************************************  //
 

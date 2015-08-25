@@ -95,6 +95,7 @@ h1.title-detail {
 	font-size: 4.375em;
 	line-height: 1em;
 	font-weight: normal;
+	word-wrap: break-word;
 }
 
 h2.subtitle-home {
@@ -118,6 +119,22 @@ article p {
 	line-height: 1.6em;
 }
 
+article .foto-ficha p {
+	margin: 0;
+}
+
+article .foto-ficha p.ver-ficha-completa {
+	margin: 12px 0 !important;
+}
+
+article h3,
+article h6 {
+	font-family: open_sansregular,Arial,Helvetica,sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 32px 0 8px;
+}
+
 article p:empty {
 	margin: 0;
 	padding: 0;
@@ -135,7 +152,7 @@ article p:empty {
 	font-size: 0.875em;
 	line-height: 1.5em;
 
-	span {
+	span:not(.dades_item) {
 		font-weight: bold;
 		color: $c-headings;
 	}

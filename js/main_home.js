@@ -3,6 +3,38 @@
 $(function(){
 
 // *********************************************  //
+// UP //
+// *********************************************  //
+	$(window).on("scroll", function() {
+		var scrollTop = $(window).scrollTop();
+		var limit = $(".hero").height();
+	  	if ( scrollTop > limit ) { 
+	    	$("#up").css({
+				"opacity": 1		
+			});
+		} else if (scrollTop < limit) {
+			$("#up").css({
+				"opacity" : 0			
+			});
+		}
+	});
+
+    function smk_jump_to_it( _selector, _speed ){
+        _speed = parseInt(_speed, 10) === _speed ? _speed : 300;
+        $( _selector ).on('click', function(event){
+            event.preventDefault();
+            var url = $(this).attr('href'); //cache the url.
+ 
+            // Animate the jump
+            $("html, body").animate({ 
+                scrollTop: parseInt( $(url).offset().top ) - 50
+            }, _speed);
+        });
+    }
+
+    smk_jump_to_it( '.up_link', 500);
+
+// *********************************************  //
 // COMPONENTE ULTIMOS COMENTARIOS //
 // *********************************************  //
 
@@ -485,6 +517,7 @@ var GetHeightHero = function () {
 		this.myWindow = $(window);
 		this.myWindow_height = this.myWindow.height();
 		this.myWindow_output = Math.round(this.myWindow_height/2);
+		this.myWindow_output = this.myWindow_output + 80;
 	};
 
 	this.applyHeight = function() {

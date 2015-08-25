@@ -1,4 +1,37 @@
 $(function(){
+
+	// *********************************************  //
+// UP //
+// *********************************************  //
+	$(window).on("scroll", function() {
+		var scrollTop = $(window).scrollTop();
+		var limit = $(".hero").height();
+	  	if ( scrollTop > limit ) { 
+	    	$("#up").css({
+				"opacity": 1		
+			});
+		} else if (scrollTop < limit) {
+			$("#up").css({
+				"opacity" : 0			
+			});
+		}
+	});
+
+    function smk_jump_to_it( _selector, _speed ){
+        _speed = parseInt(_speed, 10) === _speed ? _speed : 300;
+        $( _selector ).on('click', function(event){
+            event.preventDefault();
+            var url = $(this).attr('href'); //cache the url.
+ 
+            // Animate the jump
+            $("html, body").animate({ 
+                scrollTop: parseInt( $(url).offset().top ) - 50
+            }, _speed);
+        });
+    }
+
+    smk_jump_to_it( '.up_link', 500);
+
 // *********************************************  //
 // DESPLEGAR MENÚ PRINCIPAL //
 // *********************************************  //
@@ -100,59 +133,26 @@ var Desplegar = function () {
 var desplegarMenu = new Desplegar();
 desplegarMenu.desplegarAction();
 
-// *********************************************  //
-// FULL SCREEN//
-// *********************************************  //
+var GetHeightHero = function () {
+	var self = this;
+	this.init = function (){
+		self.getUnits();
+		self.applyHeight();
+	};
 
-function fullscreenFix(){
-    var h = $('body').height();
-    // set .fullscreen height
-    $(".content-b").each(function(i){
-        if($(this).innerHeight() <= h){
-            $(this).closest(".fullscreen").addClass("not-overflow");
-        }
-    });
-}
-$(window).resize(fullscreenFix);
-fullscreenFix();
+	this.getUnits = function() {
+		this.myWindow = $(window);
+		this.myWindow_height = this.myWindow.height();
+		this.myWindow_output = Math.round(this.myWindow_height/3);
+		this.myWindow_output_ok = this.myWindow_height - this.myWindow_output;
+	};
 
-/* resize background images */
-function backgroundResize(){
-	console.log("fuuuuull");
-    var windowH = $(window).height();
-    $(".fullscreen_background").each(function(i){
-        var path = $(this);
-        // variables
-        var contW = path.width();
-        var contH = path.height();
-        var imgW = path.attr("data-img-width");
-        var imgH = path.attr("data-img-height");
-        var ratio = imgW / imgH;
-        // overflowing difference
-        var diff = parseFloat(path.attr("data-diff"));
-        diff = diff ? diff : 0;
-        // remaining height to have fullscreen image only on parallax
-        var remainingH = 0;
-        if(path.hasClass("parallax")){
-            var maxH = contH > windowH ? contH : windowH;
-            remainingH = windowH - contH;
-        }
-        // set img values depending on cont
-        imgH = contH + remainingH + diff;
-        imgW = imgH * ratio;
-        // fix when too large
-        if(contW > imgW){
-            imgW = contW;
-            imgH = imgW / ratio;
-        }
-        //
-        path.data("resized-imgW", imgW);
-        path.data("resized-imgH", imgH);
-        path.css("background-size", imgW + "px " + imgH + "px");
-    });
-}
-$(window).resize(backgroundResize);
-$(window).focus(backgroundResize);
-backgroundResize();
+	this.applyHeight = function() {
+		$(".CoverImage--who").css("height", this.myWindow_output_ok + "px");
+	};
+};
+
+ 	var myHero = new GetHeightHero();
+ 	myHero.init();
 
 }); //FIN JQUERY

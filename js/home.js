@@ -15,6 +15,7 @@ var GetHeightHero = function () {
 		this.myWindow = $(window);
 		this.myWindow_height = this.myWindow.height();
 		this.myWindow_output = Math.round(this.myWindow_height/2);
+		this.myWindow_output = this.myWindow_output + 80;
 	};
 
 	this.applyHeight = function() {
