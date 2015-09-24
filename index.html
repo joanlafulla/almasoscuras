@@ -19,6 +19,9 @@
 <div class="up" id="up">
 	<a href="#header" class="up_link"><i class="al-icon-arrow-up2"></i></a>
 </div>
+<div class="up up_comments" id="go_comments">
+	<a href="#last-comments" class="up_link"><i class="al-icon-bubble"></i></a>
+</div>
 	<header id="header" class="header">
 		<div class="l-header--wrapper">
 			<a href="http://www.almasoscuras.com"><div class="logo">Almas Oscuras</div></a>
@@ -26,7 +29,15 @@
 			<div id="nav-main">
 				<div class="nav-main--contents">
 					<nav>
-						<a href="#" class="nav-main--bt" data-desplegar="menu"><i class="al-icon-menu"></i></a>
+						<ul class="nav-main-items">
+							<li class="nav-main-items_order">
+								<a href="http://www.almasoscuras.com/buscador_criticas/">Nuestras reseñas <span>(por <strong>puntuación,</strong> género...)</span></a>
+							</li>
+
+							<li>
+								<a href="#" class="nav-main--bt" data-desplegar="menu"><i class="al-icon-menu"></i></a>
+							</li>
+						</ul>
 					</nav>
 				</div>
 				<div class="nav-main--search">
@@ -411,7 +422,7 @@
 					</section>
 					<div style="clear:both"></div>
 					<section class="aside-block--responsive">
-						<div>
+						<div id="last-comments">
 							<header class="subsection-header">
 								<h3><i class="al-icon-bubble"> </i> Últimos comentarios</h3>
 							</header>
@@ -643,7 +654,8 @@
 </div>
 		
 </div><!-- fin wrapper -->
-<script src="js/jquery_almas.js"></script>
-<script src="js/core.js"></script>
+<script src="js/main_home.min.js"></script>
+<!-- <script src="js/jquery_almas.js"></script>
+<script src="js/core.js"></script> -->
 </body>
 </html>

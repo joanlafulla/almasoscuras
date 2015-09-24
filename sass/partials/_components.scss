@@ -33,6 +33,39 @@ img.lazy{
   margin-right: 1px;
 }
 
+.nav-main-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+    li {
+      float: left; 
+      margin-right: 4px;
+      line-height: 4;
+
+        span {
+          font-size: 75%;
+        }
+
+
+        &:last-child {
+          margin-right: 0;
+        }
+    }
+
+    a,
+    a:visited {
+      color: $c-white;
+    }
+}
+
+@media screen and (max-width: 680px) {
+  .nav-main-items_order {
+    display: none;
+  }
+}
+
 .nav-main--search {
   float: right;
 }
@@ -1336,6 +1369,7 @@ label[for="forget"] {
   margin: 0 auto;
   padding: 0 2%;
   text-align: center;
+  z-index: 6;
 
   i {
     color: $c-white;
@@ -1347,6 +1381,7 @@ label[for="forget"] {
     font-family: 'ChunkFiveRoman', Arial, Helvetica, sans-serif;
     margin: 0;
     font-size: 5em;
+    font-size: 4vw;
     line-height: 1.2em;
     font-weight: normal;
     @include text-shadow;
@@ -1356,8 +1391,13 @@ label[for="forget"] {
     @include open_light;
     @include text-shadow;
     font-size: 1.8em;
+    font-size: 1.5vw;
     margin: 2px 0;
     font-weight: normal;
+  }
+
+  h1, h2 {
+    transition: all .3s;
   }
 
   >a{
@@ -1384,20 +1424,40 @@ label[for="forget"] {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px)
+              and (orientation:portrait) {
+    .infoblock-text {
+      transform: none;
+      bottom: 10%;
+      top: auto;
+    }
+  }
+
+@media screen and (max-width: 980px) {
   .infoblock-text h1 {
     font-size: 2em;
+    font-size: 5vw;
   }
 
   .infoblock-text h2 {
     font-size: 16px;
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .infoblock-text h1 {
+    font-size: 2em;
+    font-size: 8vw;
   }
 
-  .infoblock-text {
-    transform: none;
-    bottom: 10%;
-    top: auto;
+  .infoblock-text h2 {
+    font-size: 16px;
+    font-size: 4vw;
   }
+}
+
+@media screen and (max-width: 600px) {
 
   .tag--vod {
     @include small;
@@ -1920,6 +1980,10 @@ blockquote p {
 			line-height: 3em;
 			display: block;
 		}
+}
+
+.up.up_comments {
+  right: 70px;
 }
 
 @media screen and (min-width: 600px) {

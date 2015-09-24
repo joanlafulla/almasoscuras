@@ -7,11 +7,11 @@ $(function(){
 		var scrollTop = $(window).scrollTop();
 		var limit = $(".hero").height();
 	  	if ( scrollTop > limit ) { 
-	    	$("#up").css({
+	    	$("#up, #go_comments").css({
 				"opacity": 1		
 			});
 		} else if (scrollTop < limit) {
-			$("#up").css({
+			$("#up, #go_comments").css({
 				"opacity" : 0			
 			});
 		}
