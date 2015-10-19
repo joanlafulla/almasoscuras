@@ -2169,6 +2169,7 @@ blockquote p {
   background-color: rgba(209,199,160,0.4);
   padding: 12px;
   border-bottom: 5px solid rgb(209,199,160);
+  position: relative;
 
     img {
       width: auto;
@@ -2181,6 +2182,27 @@ blockquote p {
     p {
       margin-top: 0;
     }
+}
+
+.pildora::before {
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    content: "";
+    display: inline-block;
+    left: -8px;
+    position: absolute;
+    top: 20px;
+}
+.pildora::after {
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid #eee;
+    border-top: 6px solid transparent;
+    content: "";
+    display: inline-block;
+    left: -6px;
+    position: absolute;
+    top: 21px;
 }
 
 

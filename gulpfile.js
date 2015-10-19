@@ -1,3 +1,5 @@
+require('es6-promise').polyfill();
+
 var gulp = require('gulp');
 var browsersync = require('browser-sync');
 var reload = browsersync.reload;
