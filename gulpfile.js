@@ -10,14 +10,18 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var uglify = require('gulp-uglify');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 
 gulp.task('styles', function() {
     //En develop podemos poner el style en 'expanded' / en producción lo podremos en 'compressed'
     return gulp.src('./sass/*.scss', {sourcemap: true, outputStyle: 'compressed'})
         .pipe(sass())
+        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
         .pipe(minifycss({compatibility: 'ie8'}))
         .pipe(gulp.dest('./css'))
         .pipe(rename('styles.css'))
+        
         .pipe(notify({ message: 'Styles task complete with minify' }));
 });
 
