@@ -2163,5 +2163,25 @@ blockquote p {
   }
 }
 
+//Related posts
+
+.pildora {
+  background-color: rgba(209,199,160,0.4);
+  padding: 12px;
+  border-bottom: 5px solid rgb(209,199,160);
+
+    img {
+      width: auto;
+      max-width: auto;
+      display: inline-block;
+      float: left;
+      margin: 0 16px 0 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+}
+
 
 
