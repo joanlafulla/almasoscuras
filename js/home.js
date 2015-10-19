@@ -15,6 +15,7 @@ var GetHeightHero = function () {
 		this.myWindow = $(window);
 		this.myWindow_height = this.myWindow.height();
 		this.myWindow_output = Math.round(this.myWindow_height/2);
+		this.myWindow_output = this.myWindow_output + 80;
 	};
 
 	this.applyHeight = function() {
@@ -37,25 +38,25 @@ var getJsonHero = function() {
 	};
 
 	this.resizeBackground = function(img_big, img_medium, img_small) {
-		console.log("hola resize");
 		if (window.matchMedia( '(min-width: 479px)' ).matches && window.matchMedia( '(max-width: 798px)' ).matches) {
 				$(".CoverImage").css({
-				"background-image" : "url('./img/hero/"+img_medium+"')"
+				"background-image" : "url('http://www.almasoscuras.com/img/hero/"+img_medium+"')"
 				});
 			} else if (window.matchMedia( '(min-width: 799px)' ).matches) { 
 				$(".CoverImage").css({
-				"background-image" : "url('./img/hero/"+img_big+"')"
+				"background-image" : "url('http://www.almasoscuras.com/img/hero/"+img_big+"')"
 				});
 		} else {
 				$(".CoverImage").css({
-				"background-image" : "url('./img/hero/"+img_small+"')"
+				"background-image" : "url('http://www.almasoscuras.com/img/hero/"+img_small+"')"
 				});
 		}
 	}
 
 	this.getJson = function() {
 		
-		var jasonData = $.getJSON("hero.json", function(data) {
+		//var jasonData = $.getJSON("hero.json", function(data) {
+		var jasonData = $.getJSON("http://www.almasoscuras.com/hero.json", function(data) {
 			var titulo = data.titulo,
 				subtitulo = data.subtitulo,
 				categoria = data.categoria,

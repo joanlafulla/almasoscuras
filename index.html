@@ -16,14 +16,28 @@
 </head>
 <body>
 <div class="page" style="position:relative">
-	<header id="header">
+<div class="up" id="up">
+	<a href="#header" class="up_link"><i class="al-icon-arrow-up2"></i></a>
+</div>
+<div class="up up_comments" id="go_comments">
+	<a href="#last-comments" class="up_link"><i class="al-icon-bubble"></i></a>
+</div>
+	<header id="header" class="header">
 		<div class="l-header--wrapper">
 			<a href="http://www.almasoscuras.com"><div class="logo">Almas Oscuras</div></a>
 			<a href="http://www.almasoscuras.com"><div class="logo-responsive">Almas Oscuras</div></a>
 			<div id="nav-main">
 				<div class="nav-main--contents">
 					<nav>
-						<a href="#" class="nav-main--bt" data-desplegar="menu"><i class="al-icon-menu"></i></a>
+						<ul class="nav-main-items">
+							<li class="nav-main-items_order">
+								<a href="http://www.almasoscuras.com/buscador_criticas/">Nuestras reseñas <span>(por <strong>puntuación,</strong> género...)</span></a>
+							</li>
+
+							<li>
+								<a href="#" class="nav-main--bt" data-desplegar="menu"><i class="al-icon-menu"></i></a>
+							</li>
+						</ul>
 					</nav>
 				</div>
 				<div class="nav-main--search">
@@ -176,7 +190,7 @@
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora voluptates delectus excepturi mollitia obcaecati at vitae repellendus voluptate fugit repudiandae, id, ea aliquid, perferendis animi cumque consectetur autem veniam nam!
 					</p>
-					<div class="leer-mas"><a href="#" class="button-primary">Continuar leyendo</a></div>
+					<div class="leer-mas"><a href="#" class="aartcompleto">Ver trailer, nuevas imágenes y comentarios</a></div>
 
 					<section class="mejor_peor">
 						<div>
@@ -293,7 +307,7 @@
 							<div class="total-score">
 								<ul>
 									<li class="total-score--numbers">4.5/5</li>
-									<li class="total-score--stars"><i class="al-icon-star3"></i><i class="al-icon-star3"></i><i class="al-icon-star3"></i><i class="al-icon-star3"></i><i class="al-icon-star2"></i></li>
+									<li class="total-score--stars"><i class="al-icon-star3"></i><i class="al-icon-star3"></i><i class="al-icon-star2"></i><i class="al-icon-star2"></i><i class="al-icon-star2"></i></li>
 								</ul>
 							</div>
 						</section>
@@ -326,6 +340,49 @@
 					</footer>
 				</div>
 			</article><!-- fin article -->
+			<table id="tablapelis" class="tablesorter">
+				<thead>
+				<tr>
+					<th>Película</th>
+					<th>Género</th>
+					<th class="tablesorter_descarto">Año</th>
+					<th class="tablesorter_descarto">Autor</th>
+					<th>Puntuación</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="20%" valign="top"><strong><a href="http://www.almasoscuras.com/1" rel="bookmark">+1</a></strong></td>
+						<td width="20%" valign="top">Alienígenas</td>
+						<td width="20%" valign="top" align="center">2013</td>
+						<td width="20%" valign="top"><a href="http://www.almasoscuras.com/1" rel="bookmark">Manu</a></td>
+						<td width="20%" valign="top">3.5</td>
+					</tr>
+
+					<tr>
+						<td width="20%" valign="top"><strong><a href="http://www.almasoscuras.com/100-bloody-acres-review" rel="bookmark">100 Bloody&nbsp;Acres</a></strong></td>
+						<td width="20%" valign="top">Gore</td>
+						<td width="20%" valign="top" align="center">2012</td>
+						<td width="20%" valign="top"><a href="http://www.almasoscuras.com/100-bloody-acres-review" rel="bookmark">RedRum</a></td>
+						<td width="20%" valign="top">1</td>
+					</tr>
+					<tr>
+						<td width="20%" valign="top"><strong><a href="http://www.almasoscuras.com/1" rel="bookmark">+1</a></strong></td>
+						<td width="20%" valign="top">Alienígenas</td>
+						<td width="20%" valign="top" align="center">2013</td>
+						<td width="20%" valign="top"><a href="http://www.almasoscuras.com/1" rel="bookmark">Manu</a></td>
+						<td width="20%" valign="top">3.5</td>
+					</tr>
+
+					<tr>
+						<td width="20%" valign="top"><strong><a href="http://www.almasoscuras.com/100-bloody-acres-review" rel="bookmark">100 Bloody&nbsp;Acres</a></strong></td>
+						<td width="20%" valign="top">Gore</td>
+						<td width="20%" valign="top" align="center">2012</td>
+						<td width="20%" valign="top"><a href="http://www.almasoscuras.com/100-bloody-acres-review" rel="bookmark">RedRum</a></td>
+						<td width="20%" valign="top">1</td>
+					</tr>
+				</tbody>
+			</table>
 			<!-- INICIO PAGINACIÓN -->
 			<div class="navgoogle clearfix">
 				<ul class="rsx-page-num-list">
@@ -365,7 +422,7 @@
 					</section>
 					<div style="clear:both"></div>
 					<section class="aside-block--responsive">
-						<div>
+						<div id="last-comments">
 							<header class="subsection-header">
 								<h3><i class="al-icon-bubble"> </i> Últimos comentarios</h3>
 							</header>
@@ -567,27 +624,38 @@
 	</section><!-- fin content -->
 </div><!-- fin page -->
 <div class="footer-wrapper">
-<section id="footer">
-	<footer>
-		<div class="gr-container">
-			<div class="gr-row">
-				<div class="gr-block4">
-					<ul class="share share--footer">
-						<li><a href=""><i class="al-icon-facebook"> </i></a></li>
-						<li><a href=""><i class="al-icon-twitter"></i></a></li>
-						<li><a href=""><i class="al-icon-feed"></i></a></li>
-					</ul>
+	<section id="footer">
+		<footer>
+			<div class="gr-container">
+				<div class="gr-row">
+					<div class="gr-block4 footer-info-img">
+						<div class="footer-info-img">
+							<img src="img/logo_footer_06.png" alt="Almas Oscuras" />
+						</div>
+						<div class="footer-info">
+							<ul class="share share--footer">
+								<li><a href=""><i class="al-icon-facebook"> </i></a></li>
+								<li><a href=""><i class="al-icon-twitter"></i></a></li>
+								<li><a href=""><i class="al-icon-feed"></i></a></li>
+							</ul>
+							<p class="footer-info_nav">
+							Quiénes somos · Reseñas de películas<br />
+							Carteles de películas · Relatos · Libros
+							<p>
+							<p class="footer-info-mine">
+							Design: <a href="mailto:joan@almasoscuras.com">joan@almasocuras.com</a>
+							</p>
+						</div>
+					</div>
 				</div>
-				<div class="gr-block8">
-					<img src="img/footer_almas.jpg">
-				</div>	
 			</div>
-		</div>
-	</footer>
-</section>
+		</footer>
+	</section>
 </div>
 		
 </div><!-- fin wrapper -->
 <script src="js/main_home.min.js"></script>
+<!-- <script src="js/jquery_almas.js"></script>
+<script src="js/core.js"></script> -->
 </body>
 </html>

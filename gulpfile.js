@@ -12,13 +12,13 @@ var notify = require('gulp-notify');
 var uglify = require('gulp-uglify');
 
 gulp.task('styles', function() {
-    return gulp.src('./sass/*.scss', {sourcemap: true, style: 'expanded'})
-        //Solo activar el minify para el css que subirá a producción
-        // .pipe(minifycss())
+    //En develop podemos poner el style en 'expanded' / en producción lo podremos en 'compressed'
+    return gulp.src('./sass/*.scss', {sourcemap: true, outputStyle: 'compressed'})
         .pipe(sass())
+        .pipe(minifycss({compatibility: 'ie8'}))
         .pipe(gulp.dest('./css'))
         .pipe(rename('styles.css'))
-        .pipe(notify({ message: 'Styles task complete' }));
+        .pipe(notify({ message: 'Styles task complete with minify' }));
 });
 
 gulp.task('copy', function(){
@@ -31,7 +31,9 @@ gulp.task('scripts_home', function() {
     .pipe(concat('main_home.js'))
     .pipe(gulp.dest('./js'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+
+    //Solo activar el minify para el js que subirá a producción
+    .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./js'))
     .pipe(notify({ message: 'Scripts task home complete' }));
 });
@@ -46,11 +48,22 @@ gulp.task('scripts_who', function() {
     .pipe(notify({ message: 'Scripts task who complete' }));
 });
 
+gulp.task('scripts_sorter', function() {
+  return gulp.src(['./js/jquery_almas.js', './js/core.js', './js/tablesorter.js'])
+    .pipe(concat('main_sorter.js'))
+    .pipe(gulp.dest('./js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./js'))
+    .pipe(notify({ message: 'Scripts task sorter complete' }));
+});
+
 gulp.task('scripts_detall', function() {
   return gulp.src(['./js/jquery_almas.js', './js/core.js', './js/jquery.fitvids.js', './js/jquery.lazy.js', './js/detall.js'])
     .pipe(concat('main_detall.js'))
     .pipe(gulp.dest('./js'))
     .pipe(rename({suffix: '.min'}))
+    //Solo activar el minify para el js que subirá a producción
     .pipe(uglify())
     .pipe(gulp.dest('./js'))
     .pipe(notify({ message: 'Scripts task detall complete' }));

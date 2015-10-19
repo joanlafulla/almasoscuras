@@ -57,8 +57,10 @@ $margin: 5%;
     float:none !important;
     margin:32px 0 32px 0 !important;
   }
+}
 
-  #footer [class*="gr-block"]{
+@media screen and (max-width: 920px) {
+    #footer [class*="gr-block"]{
     width:100% !important;
     float:none !important;
     margin:32px 0 0 0 !important;
@@ -68,5 +70,9 @@ $margin: 5%;
 
   #footer footer {
     margin-bottom: -32px !important;
+  }
+
+  .footer-info-img img {
+    margin: 0 auto;
   }
 }

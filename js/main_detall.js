@@ -3,6 +3,38 @@
 $(function(){
 
 // *********************************************  //
+// UP //
+// *********************************************  //
+	$(window).on("scroll", function() {
+		var scrollTop = $(window).scrollTop();
+		var limit = $(".hero").height();
+	  	if ( scrollTop > limit ) { 
+	    	$("#up, #go_comments").css({
+				"opacity": 1		
+			});
+		} else if (scrollTop < limit) {
+			$("#up, #go_comments").css({
+				"opacity" : 0			
+			});
+		}
+	});
+
+    function smk_jump_to_it( _selector, _speed ){
+        _speed = parseInt(_speed, 10) === _speed ? _speed : 300;
+        $( _selector ).on('click', function(event){
+            event.preventDefault();
+            var url = $(this).attr('href'); //cache the url.
+ 
+            // Animate the jump
+            $("html, body").animate({ 
+                scrollTop: parseInt( $(url).offset().top ) - 50
+            }, _speed);
+        });
+    }
+
+    smk_jump_to_it( '.up_link', 500);
+
+// *********************************************  //
 // COMPONENTE ULTIMOS COMENTARIOS //
 // *********************************************  //
 
@@ -157,44 +189,67 @@ $(document).on("click", ".button-secondary", function(e) {
 // CONTAR ESTRELLAS //
 // *********************************************  //
 
-function contarestrellas() {
-	$(".total-score--stars").each(function(){
-		var star = $(this).find(".al-icon-star3"),
-		halfStar = $(".al-icon-star2"),
-		scoreNumber = $(".total-score--numbers"),
-		scoreStar = $(".total-score ul li.total-score--stars"),
-		cuantasEstrellasOK = $(this).find(".al-icon-star3").length;
-		function getStars (starColour) {
-			star.css("color", starColour);
-    		halfStar.css("color", starColour);
-    		scoreNumber.css("background-color", starColour);
-    		scoreStar.css("border", "1px solid " + starColour);
-		}
-			switch (cuantasEstrellasOK) {
+var ContarEstrellas = function () {
+	var self = this;
+	this.escoreStar = "";
+	this.star = "";
+	this.halfStar = "";
+	this.scoreNumber = "";
+	this.scoreStar = "";
+	this.cuantasEstrellasOK = "";
+
+	this.init = function() {
+		self.setStarsVariables();
+	};
+
+	this.getStars = function(starColour) {
+		self.star.css("color", starColour);
+		self.halfStar.css("color", starColour);
+		self.scoreNumber.css("background-color", starColour);
+		self.scoreStar.css("border", "1px solid " + starColour);
+	};
+
+	this.setStarsVariables = function () {
+		$(".total-score--stars").each(function(){
+			self.star = $(this).find(".al-icon-star3");
+			self.halfStar = $(this).find(".al-icon-star2");
+			self.scoreNumber = $(this).prev(".total-score--numbers");
+			self.scoreStar = $(this);
+			self.cuantasEstrellasOK = $(this).find(".al-icon-star3").length;
+
+			self.adjustStars();
+		});
+	};
+		
+	this.adjustStars = function() {
+		switch (self.cuantasEstrellasOK) {
 	    		case 1:
-	    			getStars("#3498db");
+	    			this.getStars("#3498db");
 		        break;
 
 		        case 2:
-	    			getStars("#2980b9");
+	    			this.getStars("#2980b9");
 		        break;
 
 		        case 3:
-	    			getStars("#f1c40f");
+	    			this.getStars("#f1c40f");
 		        break;
 
 		        case 4:
-	    			getStars("#e67e22");
+	    			this.getStars("#e67e22");
 		        break;
 
 		        case 5:
-	    			getStars("#e74c3c");
+	    			this.getStars("#e74c3c");
 		        break;
 			}	
-		});
-	}
+	};		
+}
 
-contarestrellas();
+var setStars = new ContarEstrellas();
+setStars.init();
+
+
 
 // *********************************************  //
 // GENERADOR DEL RATE                             //
@@ -219,14 +274,13 @@ $.each(rateWrappers, function(e) {
 var lastReviewsPosition = $("#last-reviews").offset();
 var lastReviewsHeight = $(".last-reviews").height();
 var lastReviewsY = Math.round(lastReviewsPosition.top);
-console.log("Last reviews Y: " + lastReviewsY);
 
 var rateStars = $(".last-reviews--starts");
 
 $(document).on("scroll", function (){
-	console.log("scroll top: " + $(document).scrollTop());
+
 	if ($(document).scrollTop() >= (lastReviewsY - 200)) {
-		console.log("hola scroll");
+
 		$.each(rateStars, function(e) {
 			var hot_bar = $(this).find("td.last-reviews--score").data("rate");
 			for (var i = 1; i <= 5; i++) {
@@ -959,7 +1013,7 @@ jQuery("img.lazy").lazy({
 // *********************************************  //
 // VIDEOS DE YOUTUBE/VIMEO RESPONSIVE //
 // *********************************************  //
-$( "iframe" ).wrap( "<div class='video-post--content'></div>" );
+$( "iframe, object" ).wrap( "<div class='video-post--content'></div>" );
 	$(".video-post--content").fitVids();
 	
 }); //FIN JQUERY
