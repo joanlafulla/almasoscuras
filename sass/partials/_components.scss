@@ -1094,6 +1094,18 @@ ul.alert-error {
     background-color: $c-orange;
 }
 
+.tag--pildoras {
+  @extend %tag;
+  border: 1px solid darken(#d1c7a0, 20%);
+  color: darken(#d1c7a0, 20%);
+
+    &:hover {
+      text-decoration: none;
+      background-color: darken(#d1c7a0, 20%);
+      color: $c-white;
+    }
+}
+
   // BUTTONS
 
 @mixin button ($color, $background-color, $background-color--hover, $padding) {
@@ -2181,6 +2193,11 @@ blockquote p {
 
     p {
       margin-top: 0;
+    }
+
+    a i {
+      color: $c-blue !important;
+      vertical-align: middle;
     }
 }
 

@@ -2,11 +2,11 @@
 
 @font-face {
 	font-family: 'i-almasoscuras';
-	src:url('../fonts/icons/icomoon_v6.eot?-cimlqn');
-	src:url('../fonts/icons/icomoon_v6.eot?#iefix-cimlqn') format('embedded-opentype'),
-		url('../fonts/icons/icomoon_v6.woff?-cimlqn') format('woff'),
-		url('../fonts/icons/icomoon_v6.ttf?-cimlqn') format('truetype'),
-		url('../fonts/icons/icomoon_v6.svg?pq4bxk#icomoon') format('svg');
+	src:url('../fonts/icons/icomoon_v7.eot?-cimlqn');
+	src:url('../fonts/icons/icomoon_v7.eot?#iefix-cimlqn') format('embedded-opentype'),
+		url('../fonts/icons/icomoon_v7.woff?-cimlqn') format('woff'),
+		url('../fonts/icons/icomoon_v7.ttf?-cimlqn') format('truetype'),
+		url('../fonts/icons/icomoon_v7.svg?pq4bxk#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -30,6 +30,10 @@
 
 [class^="al-icon-"]:before {
 	text-decoration: none !important;
+}
+
+.al-icon-open_in_new:before {
+	content: "\e2b2";
 }
 
 .al-icon-check:before {
