@@ -55,8 +55,8 @@ var getJsonHero = function() {
 
 	this.getJson = function() {
 		
-		//var jasonData = $.getJSON("hero.json", function(data) {
-		var jasonData = $.getJSON("http://www.almasoscuras.com/hero.json", function(data) {
+		var jasonData = $.getJSON("hero.json", function(data) {
+		//var jasonData = $.getJSON("http://www.almasoscuras.com/hero.json", function(data) {
 			var titulo = data.titulo,
 				subtitulo = data.subtitulo,
 				categoria = data.categoria,
